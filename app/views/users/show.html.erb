@@ -4,9 +4,18 @@
     <%= @user.lastname %>
   </h1>
   <div class='center'>
-    <h3>username:<div class="color"><%= @user.username %></div>
-    </h3>
-    <h4>
-      <%= @user.email %></h4>
+    <h4>Username:
+      <%= @user.username %>
+    </h4>
+    <h5>
+      <%= @user.email %></h5>
   </div>
+  <div>
+    <h3 class='altheader'>To-Do</h3>
+    <%= render @user.items %>
+  </div>
+  <br>
+  <% if current_user %>
+  <%= render 'items/form', item: Item.new, user: @user %>
+  <% end %>
 </div>
