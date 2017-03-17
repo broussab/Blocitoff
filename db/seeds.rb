@@ -25,6 +25,15 @@ users = User.all
   )
 end
 
+User.create!(
+  firstname: 'Alyssa',
+  lastname: 'Broussard',
+  username: 'Alyssa',
+  email:  'alybeic@gmail.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
+
 puts 'Seed finished'
 puts "#{User.count} users created"
 puts "#{Item.count} items created"

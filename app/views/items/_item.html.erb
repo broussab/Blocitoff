@@ -1,5 +1,9 @@
 <div>
   <p>
-    <strong><%= item.name %></strong>
-  </p>
-</div>
+    <div class='row'>
+      <strong class='col-md-9'><%= item.name %></strong>
+      <div class='col-md-3 center'>
+        Mark as Completed:
+        <%= link_to "", user_item_path(@user, item.id), method: :delete, class: 'glyphicon glyphicon-ok' %></div>
+    </p>
+  </div>
