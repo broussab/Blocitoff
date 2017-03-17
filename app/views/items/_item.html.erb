@@ -1,9 +1,22 @@
-<div>
-  <p>
-    <div class='row'>
-      <strong class='col-md-9'><%= item.name %></strong>
-      <div class='col-md-3 center'>
-        Mark as Completed:
-        <%= link_to "", user_item_path(@user, item.id), method: :delete, class: 'glyphicon glyphicon-ok' %></div>
-    </p>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-9'>
+      <ul>
+        <li>
+          <strong><%= item.name %></strong>
+        </li>
+        <div class="media-body">
+          <small>
+            created
+            <%= time_ago_in_words(item.created_at) %>
+            ago</small>
+        </div>
+      </ul>
+    </div>
+    <% if current_user == @user %>
+    <div class='col-md-3'>
+      Mark as Completed:
+      <%= link_to "", user_item_path(@user, item.id), method: :delete, class: 'glyphicon glyphicon-ok' %></div>
+    <% end %>
   </div>
+</div>

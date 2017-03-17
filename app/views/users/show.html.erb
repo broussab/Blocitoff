@@ -15,7 +15,7 @@
     <%= render @user.items %>
   </div>
   <br>
-  <% if current_user %>
+  <% if current_user == @user %>
   <%= render 'items/form', item: Item.new, user: @user %>
   <% end %>
 </div>
