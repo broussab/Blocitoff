@@ -12,7 +12,11 @@
   </div>
   <div>
     <h3 class='altheader'>To-Do</h3>
+    <% if @user.items.empty? %>
+    <h4 class='center'>There are no to-do items on the list.</h4>
+  <% else %>
     <%= render @user.items %>
+    <% end %>
   </div>
   <br>
   <% if current_user == @user %>
